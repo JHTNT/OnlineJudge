@@ -14,6 +14,6 @@ try:
                 S += num
                 num += c * 2 + 1
                 c += 1
-            print("Case %d: %d" %(j + 1, S)) # %d為字串格式化
+            print("Case %d: %d" %(j + 1, S)) #%d為字串格式化
 except EOFError:
     pass
