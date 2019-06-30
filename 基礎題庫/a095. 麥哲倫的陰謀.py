@@ -6,4 +6,4 @@ try:
         else:
             print(y)
 except EOFError:
-    pass
+    pass 

@@ -5,4 +5,4 @@ try:
         x.sort()
         print(*x, sep=" ")
 except EOFError:
-    pass
+    pass 
