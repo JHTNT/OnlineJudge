@@ -1,5 +1,5 @@
 # 導入函式庫
-import numpy as np
+import numpy as np  
 from keras.models import Sequential
 from keras.datasets import mnist
 from keras.layers import Dense, Dropout, Activation, Flatten
@@ -42,6 +42,14 @@ print("\t[Info] Accuracy of testing data = {:2.1f}%".format(scores[1]*100.0))
 X = x_Test_norm[0:10,:]
 predictions = model.predict_classes(X)
 # get prediction result
-plt.imshow(X_test[0])
-plt.show()
 print(predictions)
+
+# 模型結構存檔
+from keras.models import model_from_json
+json_string = model.to_json()
+with open("model.config", "w") as text_file:
+    text_file.write(json_string)
+
+    
+# 模型訓練結果存檔
+model.save_weights("model.weight")
