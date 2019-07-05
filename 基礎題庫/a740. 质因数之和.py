@@ -6,7 +6,7 @@ try:
             S = 0
             if x > 1:
                 for i in range(2, x + 1):
-                    if i > 44722: # 質數判定只需到最大測資的平方根
+                    if i > 44722: # 質數判定只需到最大測資的平方根 
                         S += x
                         break
                     while x % i == 0:
