@@ -13,7 +13,7 @@ try:
         if max_appear == 1:
             return
         for k, v in count.items():
-            if v == max_appear:
+            if v == max_appear: # 測資第4、10行錯誤
                 print(str(k) + " " + str(v))
     while True:
         n = int(input())
