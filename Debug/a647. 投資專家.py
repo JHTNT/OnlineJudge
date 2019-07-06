@@ -5,7 +5,7 @@ try:
         n = int(input())
         for i in range(n):
             before, after = map(int, input().split())
-            percent = (after - before) / before * 100 # 運算精度為未解決
+            percent = (after - before) / before * 100 # 四捨五入問題未解決
             if float(percent) <= -7 or float(percent) >= 10:
                 print(str(percent) + "%" + " dispose")
             else:
