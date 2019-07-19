@@ -1,4 +1,4 @@
-try:
+try: # NA(應該是記憶體爆掉)
     while True:
         n = int(input())
         l = input()
