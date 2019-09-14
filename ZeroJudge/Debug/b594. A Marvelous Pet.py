@@ -1,4 +1,4 @@
-while True:      #TLE(6s)未解決
+while True: # TLE (6s)
     n = int(input())
     if n == 0:
         break

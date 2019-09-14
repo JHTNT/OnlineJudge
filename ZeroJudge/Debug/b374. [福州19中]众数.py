@@ -1,4 +1,4 @@
-try:
+try: # NA (score:80%)
     def count_num(l):
         count = {}
         for i in l:

@@ -1,4 +1,4 @@
-from decimal import Decimal, ROUND_HALF_UP, getcontext
+from decimal import Decimal, ROUND_HALF_UP, getcontext # NA (score:50%)
 try:
     while True:
         getcontext().prec = 2

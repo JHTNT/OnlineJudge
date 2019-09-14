@@ -1,4 +1,4 @@
-try: # 整個不知道在寫什麼
+try: # NA (score:0%)
     while True:
         n = int(input())
         k, k_tem, a, d = 0, 0, 0, 0
