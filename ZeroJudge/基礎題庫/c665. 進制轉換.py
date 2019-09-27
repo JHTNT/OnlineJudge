@@ -1,6 +1,6 @@
 def encode(n, ns):
     x = ""
-    hstr = "0123456789ABCDEF"
+    hstr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     if n == 0:
         x = "0"
     while n > 0:
