@@ -1,14 +1,18 @@
-from decimal import Decimal, ROUND_HALF_UP, getcontext # NA (score:50%)
 try:
     while True:
-        getcontext().prec = 2
         n = int(input())
         for i in range(n):
             before, after = map(int, input().split())
-            percent = (after - before) / before * 100 # 四捨五入問題未解決
-            if float(percent) <= -7 or float(percent) >= 10:
-                print(str(percent) + "%" + " dispose")
+            percent = (after - before) / before * 100
+            if percent > 0:
+                percent += 0.00001
+                print(percent)
+            elif percent < 0:
+                percent -= 0.00001
+                print(percent)
+            if percent <= -7 or percent >= 10:
+                print("{0:.02f}% dispose".format(round(percent, 2)))
             else:
-                print(str(percent) + "%" + " keep")
+                print("{0:.02f}% keep".format(round(percent, 2)))
 except EOFError:
     pass
