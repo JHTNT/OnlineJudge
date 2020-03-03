@@ -6,10 +6,8 @@ try:
             percent = (after - before) / before * 100
             if percent > 0:
                 percent += 0.00001
-                print(percent)
             elif percent < 0:
                 percent -= 0.00001
-                print(percent)
             if percent <= -7 or percent >= 10:
                 print("{0:.02f}% dispose".format(round(percent, 2)))
             else:
