@@ -1,4 +1,3 @@
-import time
 import datetime
 try:
     while True:
