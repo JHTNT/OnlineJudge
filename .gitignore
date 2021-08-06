@@ -329,3 +329,8 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# 自定義
+.vscode/*
+ZeroJudge/debug/*
+Codeforces/debug/*
