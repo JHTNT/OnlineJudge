@@ -1,5 +1,4 @@
 from sys import stdin
-from typing import List
 
 class Solution:
     def get_next(self, needle):
