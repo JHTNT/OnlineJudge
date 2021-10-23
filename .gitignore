@@ -334,3 +334,4 @@ ASALocalRun/
 .vscode/*
 ZeroJudge/debug/*
 Codeforces/debug/*
+*.exe
