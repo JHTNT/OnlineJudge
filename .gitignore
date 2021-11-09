@@ -335,3 +335,5 @@ ASALocalRun/
 ZeroJudge/debug/*
 Codeforces/debug/*
 *.exe
+test.in
+test.out
