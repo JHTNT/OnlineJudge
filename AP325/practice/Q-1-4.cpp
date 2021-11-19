@@ -1,3 +1,4 @@
+// 參考 https://yuihuang.com/zj-f638/
 #include <stdio.h>
 #include <math.h>
 #define MAXN 50005
