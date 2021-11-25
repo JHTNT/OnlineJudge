@@ -1,7 +1,8 @@
 // 參考 https://yuihuang.com/zj-f638/
 #include <stdio.h>
-#include <math.h>
+#include <cmath>
 #define MAXN 50005
+using namespace std;
 
 int p[MAXN];
 long long lps[MAXN], rps[MAXN];         // lps = left prefix sum
