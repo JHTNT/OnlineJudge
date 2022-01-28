@@ -19,7 +19,7 @@ int main() {
     while (cin >> m >> n) {
         int max_len = 0;
         cout << m << " " << n << " ";
-        if (n < m) swap(m, n);          // 保持 m 為較小的
+        if (n < m) swap(m, n);          // 保持 m 為較小的值
         for (int i = m; i <= n; i++) {
             max_len = max(max_len, get_len(i));         // 取得最長的循環次數
         }
