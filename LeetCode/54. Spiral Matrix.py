@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         n, m = len(matrix[0]), len(matrix)
-        right, bottom, left, top = n, m, 0, 0
+        right, bottom, left, top = n, m, 0, 0       # 設置四個邊界值
         num = []
         while left < right and top < bottom:
             for i in range(left, right):
@@ -13,7 +13,7 @@ class Solution:
             for j in range(top, bottom):
                 num.append(matrix[j][right - 1])
             right -= 1
-            if left < right and top < bottom: # 避免在迴圈內結束後再往回判斷
+            if left < right and top < bottom:       # 避免在迴圈內結束後再往回判斷
                 for i in range(right - 1, left - 1, -1):
                     num.append(matrix[bottom - 1][i])
                 bottom -= 1
