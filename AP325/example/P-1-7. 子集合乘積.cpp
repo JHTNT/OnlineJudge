@@ -43,6 +43,6 @@ int main() {
     }
     ans = 0;
     recursion(0, 1);        // index = 0; product = 1
-    printf("%d", ans - 1);          // 排除空集合
+    printf("%d", ans - 1);          // 扣掉 1 排除空集合
     return 0;
 }
