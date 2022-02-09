@@ -8,8 +8,6 @@
 using namespace std;
 
 int main() {
-    freopen("test.in", "r", stdin);
-    freopen("test.out","w", stdout);
     int sum, max, temp, i;
     char num[10000];
     while (fgets(num, 10000, stdin)) {
