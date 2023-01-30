@@ -1,12 +1,13 @@
-#include <stdio.h>
+// P-1-1. 合成函數(1)
+#include <bits/stdc++.h>
 using namespace std;
 
 int eval() {
-    int val, x, y;
     char c;
-    if (scanf("%d", &val) == 1) return val;         // 若成功獲取整數接回傳
-
-    scanf("%c", &c);        // 否則讀取一個字元並判斷函數
+    int x, y, n;
+    if (cin >> n && cin) return n;
+    cin.clear();    // reset cin status when cin failed
+    cin >> c;
     if (c == 'f') {
         x = eval();
         return 2 * x - 1;
@@ -18,6 +19,8 @@ int eval() {
 }
 
 int main() {
-    printf("%d\n", eval());
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout << eval();
     return 0;
 }
