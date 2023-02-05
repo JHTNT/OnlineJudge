@@ -2,8 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-clock_t s, e;
-
 /* 迴圈 (1.869 s)
 int main() {
     int n, ans = 0;
@@ -43,6 +41,5 @@ int main() {
     for (int i = 0; i < n; i++) cin >> nums[i];
     rec(0, 1);
     cout << ans;
-    cout << "\n" << (double) (e - s) / CLOCKS_PER_SEC << " s";
     return 0;
 }
