@@ -31,7 +31,7 @@ void calc(int left, int right, int index, long long water) {
             calc(left, pos, index, water);
         }
     } else {
-        long long tmp = (right - pos) * h;
+        long long tmp = h * (right - pos);
         if (water >= tmp) {
             for (int i = pos; i < right; ++i) res[i] = h;
             calc(left, pos, pos - 1, water - tmp);
@@ -52,7 +52,7 @@ int main() {
         boards.push_back({tmp, i});
     }
     sort(boards.begin(), boards.end(), greater<>());
-    calc(0, n, index, w);
-    for (int i = 0; i < n; ++i) cout << res[i] << " ";
+    calc(0, n - 1, index, w);
+    for (int i = 0; i < n - 1; ++i) cout << res[i] << " ";
     return 0;
 }
