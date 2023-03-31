@@ -1,8 +1,11 @@
+// P-3-6. 砍樹 (APCS202001)
 #include <bits/stdc++.h>
 using namespace std;
 
 // stack approaching
 int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     int n, l, c[100005], h[100005];
     int total = 0, highest = 0;
     stack<int> S;
