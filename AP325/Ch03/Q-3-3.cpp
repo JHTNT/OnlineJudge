@@ -5,45 +5,26 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int res;
+    int res, tmp;  // tmp saves one number for operation
     string exp;
-    stack<pair<char, int>> s;
+
     cin >> exp;
-    res = exp[0] - '0';
+    tmp = exp[0] - '0';
     for (int i = 1; i < exp.size(); i += 2) {
-        if (s.empty()) {
-            if (exp[i] == '*') {
-                res *= exp[i + 1] - '0';
-            } else if (exp[i] == '/') {
-                res /= exp[i + 1] - '0';
-            } else {
-                s.push({exp[i], exp[i + 1] - '0'});
-            }
+        char op = exp[i], num = exp[i + 1] - '0';
+        if (op == '*') {
+            tmp *= num;
+        } else if (op == '/') {
+            tmp /= num;
         } else {
-            pair<char, int> tmp = s.top();
-            s.pop();
-            if (exp[i] == '*') {
-                tmp.second *= exp[i + 1] - '0';
-                s.push(tmp);
-            } else if (exp[i] == '/') {
-                tmp.second /= exp[i + 1] - '0';
-                s.push(tmp);
-            } else {
-                if (tmp.first == '+')
-                    res += tmp.second;
-                else
-                    res -= tmp.second;
-                s.push({exp[i], exp[i + 1] - '0'});
-            } 
+            res += tmp;
+            if (op == '+')
+                tmp = num;
+            else
+                tmp = num * -1;
         }
     }
-    if (!s.empty()) {
-        pair<char, int> tmp = s.top();
-        if (tmp.first == '+')
-            res += tmp.second;
-        else
-            res -= tmp.second;
-    }
+    res += tmp;
     cout << res;
     return 0;
 }

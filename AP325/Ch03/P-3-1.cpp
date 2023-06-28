@@ -2,37 +2,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define N 100005
-
-int parent[N], h[N], deg[N];
+int parent[100005], height[100005], degree[100005];  // degree is num of child
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int n, tmp;
-    queue<int> q;
+    int n;
+    queue<int> bottom;
+
     cin >> n;
     for (int i = 1; i <= n; i++) {
-        cin >> deg[i];
-        if (deg[i] == 0) q.push(i);
-        for (int j = 0; j < deg[i]; j++) {
+        int tmp;
+        cin >> degree[i];
+        if (degree[i] == 0) bottom.push(i);
+        for (int j = 0; j < degree[i]; j++) {
             cin >> tmp;
-            parent[tmp] = i;
+            parent[tmp] = i;  // set parent of every node
         }
     }
 
     int root, total = 0;
     while (true) {
-        int v = q.front();
-        q.pop();
+        int v = bottom.front();
+        bottom.pop();
         int p = parent[v];
-        total += h[v];
-        if (p == 0) {
+        total += height[v];
+        if (p == 0) {  // at root node
             root = v;
             break;
         }
-        h[p] = max(h[p], h[v] + 1);
-        if (--deg[p] == 0) q.push(p);
+        height[p] = max(height[p], height[v] + 1);
+        if (--degree[p] == 0) bottom.push(p);
     }
     cout << root << "\n" << total;
     return 0;

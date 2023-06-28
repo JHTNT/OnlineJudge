@@ -1,30 +1,31 @@
-// P-3-2. parenthesis matching, using STL
+// P-3-2. 括弧配對
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    string str, pa = "([{)]}";
-    bool error = false;
-    while (cin >> str) {
-        stack<int> s;
-        error = false;
-        for (char i : str) {
-            int p = pa.find(i);
-            if (p == -1) return 0;
-            if (p < 3) {
-                s.push(p);
-            } else {
-                if (s.empty() || p != s.top() + 3) {
-                    error = true;
+    string input;
+    string pattern = "([{)]}";
+
+    while (cin >> input) {
+        bool match = true;
+        stack<int> S;
+        for (char i : input) {
+            int p = pattern.find(i);
+            if (p >= 3) {  // right
+                if (S.empty() || S.top() != p - 3) {
+                    match = false;
                     break;
+                } else {
+                    S.pop();
                 }
-                s.pop();
+            } else {
+                S.push(p);
             }
         }
-        if (!s.empty()) error = true;
-        cout << (error ? "no\n" : "yes\n");
+        if (!S.empty()) match = false;
+        cout << (match ? "Yes\n" : "No\n");
     }
     return 0;
 }

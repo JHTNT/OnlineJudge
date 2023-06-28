@@ -5,22 +5,27 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int n, h[200005], p[200005];
+    int n, h[200005];
     long long total = 0;
-    multimap<int, int> mp;    // {height, index}
-    h[0] = INT_MAX;
+    set<pair<int, int>> st;  // {height, index}, ascending order
 
     cin >> n;
     for (int i = 1; i <= n; i++) cin >> h[i];
-    for (int i = 1; i <= n; i++) cin >> p[i];
 
-    for (int i = n; i >= 0; i--) {
-        auto it = mp.begin();
-        while (it != mp.end() && it->first < h[i]) {
-            total += it->second - i - 1;
-            it = mp.erase(it);
+    st.insert({h[1], 1});
+    cin.ignore(100, ' ');  // ignore the first p
+    for (int i = 2; i <= n; i++) {
+        int p;
+        cin >> p;
+        auto it = st.upper_bound({h[i] + p, i});
+        if (it == st.end())
+            total += i - 1;
+        else
+            total += i - it->second - 1;
+        while (!st.empty() && st.begin()->first <= h[i]) {
+            st.erase(st.begin());
         }
-        mp.insert({h[i] + p[i], i});
+        st.insert({h[i], i});
     }
     cout << total;
     return 0;
