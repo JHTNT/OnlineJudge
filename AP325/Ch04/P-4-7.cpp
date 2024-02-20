@@ -15,7 +15,7 @@ int main() {
         pq.push(m);
     }
 
-    long long cost;
+    long long cost = 0;
     for (int i = 0; i < n - 1; i++) {
         long long curr = pq.top();
         pq.pop();
